@@ -12,15 +12,7 @@ use Liberu\Foundation\Search\Services\SearchService;
 
 class SearchController
 {
-    protected SearchService $searchService;
-
-    protected SearcherRegistry $searchers;
-
-    public function __construct(SearchService $searchService, SearcherRegistry $searchers)
-    {
-        $this->searchService = $searchService;
-        $this->searchers = $searchers;
-    }
+    public function __construct(protected SearchService $searchService, protected SearcherRegistry $searchers) {}
 
     /**
      * Search users with advanced filters.
